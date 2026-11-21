@@ -2,7 +2,7 @@ import { AuthController } from "./auth.controller.ts";
 import { AuthRouter } from "./auth.routes.ts";
 import { AuthService } from "./auth.service.ts";
 
-export class AuthModule {
+class AuthModule {
   private authRouter: AuthRouter;
   private authController: AuthController;
   private authService: AuthService;
@@ -17,3 +17,5 @@ export class AuthModule {
     return this.authRouter.getRouter();
   }
 }
+
+export default new AuthModule();
