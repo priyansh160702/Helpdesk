@@ -1,5 +1,6 @@
 import express from "express";
 import authModule from "./modules/auth/auth.module.ts";
+import { errorMiddleware } from "./middlewares/error.middleware.ts";
 
 const app = express();
 
@@ -15,5 +16,7 @@ app.get("/health", (req, res) => {
     message: "Server is running",
   });
 });
+
+app.use(errorMiddleware());
 
 export default app;
